@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <style>
+    #panorama {
+        width: 400px;
+        height: 760px;
+    }
+    </style>
+</head>
+<body>
+
+<div id="panorama"></div>
+<script>
+pannellum.viewer('panorama', {   
+    "default": {
+        "firstScene": "first",
+        "sceneFadeDuration": 1000
+    },
+
+    "scenes": {
+        "first": {
+            "hfov": 4.67,
+            "pitch": -0.98,
+            "yaw": 47,
+            "type": "equirectangular",
+            "panorama": "https://iili.io/HvylLmb.jpg",
+            "autoLoad": true,
+            "hotSpots": [
+                {
+                    "pitch": 4.67,
+                    "yaw": -0.98,
+                    "type": "scene",
+                    "text": "next",
+                    "sceneId": "second"
+                }
+            ]
+        },
+
+        "second": {
+            "hfov": 80,
+            "pitch": 3,
+            "yaw": 47,
+            "type": "equirectangular",
+            "panorama": "https://iili.io/HvylmBV.jpg",
+            "hotSpotDebug": true,
+            "autoLoad": true,
+            "hotSpots": [
+                {
+                    "pitch": 4.67,
+                    "yaw": -0.98,
+                    "type": "scene",
+                    "text": "previous",
+                    "sceneId": "third",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                },
+                                {
+                    "pitch": -2,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "previous",
+                    "sceneId": "first",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+                "third": {
+            "hfov": 4.67,
+            "pitch": -0.98,
+            "yaw": 47,
+            "type": "equirectangular",
+            "panorama": "https://iili.io/HvylyrP.jpg",
+            "autoLoad": true,
+            "hotSpots": [
+                {
+                    "pitch": -3,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "next",
+                    "sceneId": "second"
+                }
+            ]
+        }
+    }
+});
+</script>
+
+</body>
+</html>
